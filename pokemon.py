@@ -84,9 +84,11 @@ class Trainer:
         self.active_pokemon.knock_out(their_pokemon)
         print(self.name + " has attacked " + other_trainer.name +"!")
     def switch_active_pokemon(self, new_active_pokemon):
-        if new_active_pokemon.is_knocked_out != True:
-            self.active_pokemon = new_active_pokemon
-            print(self.name + " has changed active pokemon to " + self.active_pokemon.name)
+        for poke in self.pokemons:
+            if poke == new_active_pokemon:
+                if new_active_pokemon.is_knocked_out != True:
+                    self.active_pokemon = new_active_pokemon
+                    print(self.name + " has changed active pokemon to " + self.active_pokemon.name)
 
 #Making your Pokemon and Trainers
 
